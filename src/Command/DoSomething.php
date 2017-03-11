@@ -38,12 +38,14 @@ class DoSomething extends TaskMachineCommand
         $this->taskMachine->task('intro', function(OutputInterface $output) {
             $output->writeln('hello');
         });
+        $this->taskMachine->task('action', new TestHandler);
         $this->taskMachine->task('confirm', [$this, 'confirm']);
         $this->taskMachine->task('finish', [$this, 'finish']);
         $this->taskMachine->task('fail', [$this, 'fail']);
 
         $this->taskMachine->machine('something')
-            ->first('intro')->then('confirm')
+            ->first('intro')->then('action')
+            ->task('action')->then('confirm')
             ->task('confirm')
                 ->when('output.get("answer")', 'finish')
                 ->when('!output.get("answer")', 'fail')
