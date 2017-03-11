@@ -2,10 +2,9 @@
 
 namespace ConsoleMachine\Command;
 
-use Symfony\Component\Console\Command\Command;
 use TaskMachine\TaskMachine;
 
-abstract class TaskMachineCommand extends Command
+trait TaskMachineTrait
 {
     protected $taskMachine;
 

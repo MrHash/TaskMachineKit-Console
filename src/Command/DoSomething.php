@@ -2,14 +2,17 @@
 
 namespace ConsoleMachine\Command;
 
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Workflux\Param\InputInterface as TaskInputInterface;
 
-class DoSomething extends TaskMachineCommand
+class DoSomething extends Command
 {
+    use TaskMachineTrait;
+
     protected function configure()
     {
         $this->setName('console:do');
