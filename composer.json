@@ -1,0 +1,16 @@
+{
+    "name": "mrhash/consolemachine",
+    "type": "library",
+    "require": {
+        "mrhash/taskmachine": "dev-master",
+        "shrink0r/php-schema": "dev-master as 0.3",
+        "symfony/console": "^3.2"
+    },
+    "license": "MPL-2.0",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "ConsoleMachine\\": "src/"
+        }
+    }
+}
