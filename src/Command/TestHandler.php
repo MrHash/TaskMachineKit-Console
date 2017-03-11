@@ -2,10 +2,10 @@
 
 namespace ConsoleMachine\Command;
 
-use TaskMachine\Handler\HandlerInterface;
+use TaskMachine\Handler\TaskHandlerInterface;
 use Workflux\Param\InputInterface;
 
-class TestHandler implements HandlerInterface
+class TestHandler implements TaskHandlerInterface
 {
     public function execute(InputInterface $input): array
     {

@@ -37,7 +37,6 @@ class DoSomething extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-
         $this->taskMachine->task('intro', function(OutputInterface $output) {
             $output->writeln('hello');
         });

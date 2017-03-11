@@ -5,11 +5,11 @@ namespace ConsoleMachine;
 use Auryn\Injector;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
-use TaskMachine\TaskMachine;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Console\Output\OutputInterface;
+use TaskMachine\TaskMachine;
 
 class ConsoleMachine extends Application
 {
@@ -19,7 +19,7 @@ class ConsoleMachine extends Application
     {
         parent::__construct('Console Machine', 'v0.1');
 
-        // Bootstrap a fresh injector & TaskMachine if required
+        // Bootstrap a fresh Injector & TaskMachine if required
         $this->injector = $injector ?? new Injector;
         $taskMachine = $taskMachine ?? new TaskMachine($this->injector);
 
