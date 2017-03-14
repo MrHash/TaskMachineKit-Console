@@ -31,8 +31,8 @@ class DoSomething extends Command
             ->task('confirm')
                 ->with(['question' => 'Make it so?'])
                 ->when([
-                    'output.get("answer")' => 'finish', //@todo add __get to paramholdertrait
-                    '!output.get("answer")' => 'fail'
+                    'output.answer' => 'finish',
+                    '!output.answer' => 'fail'
                 ])
             ->finally('finish')
             ->finally('fail');

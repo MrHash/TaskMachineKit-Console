@@ -12,19 +12,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MrHash/TaskMachine.git",
-                "reference": "a4fa8da83cb17b76fcb373dc03f2af63d2ca4f41"
+                "reference": "40ac312f95df9a9c9fab3c013e008e7d4e0612a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/a4fa8da83cb17b76fcb373dc03f2af63d2ca4f41",
-                "reference": "a4fa8da83cb17b76fcb373dc03f2af63d2ca4f41",
+                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/40ac312f95df9a9c9fab3c013e008e7d4e0612a9",
+                "reference": "40ac312f95df9a9c9fab3c013e008e7d4e0612a9",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
                 "rdlowrey/auryn": "^1.4",
                 "shrink0r/php-schema": "dev-master as 0.3",
-                "shrink0r/workflux": "^1.0"
+                "shrink0r/workflux": "dev-master"
             },
             "require-dev": {
                 "phpunit/phpunit": "^5.3",
@@ -52,7 +52,7 @@
                 "state machine",
                 "task"
             ],
-            "time": "2017-03-14 00:38:25"
+            "time": "2017-03-14 20:37:17"
         },
         {
             "name": "php-ds/php-ds",
@@ -449,16 +449,16 @@
         },
         {
             "name": "shrink0r/workflux",
-            "version": "1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shrink0r/workflux.git",
-                "reference": "d2818fa5fcf6eb39037020fc0c64b8c2dbf906bc"
+                "reference": "56dbcfd59bf68dd2a5e5c601103911571ed22209"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shrink0r/workflux/zipball/d2818fa5fcf6eb39037020fc0c64b8c2dbf906bc",
-                "reference": "d2818fa5fcf6eb39037020fc0c64b8c2dbf906bc",
+                "url": "https://api.github.com/repos/shrink0r/workflux/zipball/56dbcfd59bf68dd2a5e5c601103911571ed22209",
+                "reference": "56dbcfd59bf68dd2a5e5c601103911571ed22209",
                 "shasum": ""
             },
             "require": {
@@ -498,7 +498,7 @@
                 "workflow",
                 "workflux"
             ],
-            "time": "2016-12-09T14:56:03+00:00"
+            "time": "2017-03-14 20:35:02"
         },
         {
             "name": "symfony/cache",
