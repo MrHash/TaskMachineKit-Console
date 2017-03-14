@@ -24,9 +24,10 @@ trait TaskMachineTrait
         $this->taskMachine->task('fail', [$this, 'fail']);
     }
 
-    public function confirm(InputInterface $input, OutputInterface $output, TaskInputInterface $taskInput, Settings $settings) {
+    public function confirm(InputInterface $input, OutputInterface $output, TaskInputInterface $taskInput) {
         $helper = $this->getHelper('question');
-        $text = $settings->get('question') ?? 'Are you sure?';
+        echo ($taskInput->get('condition') ? 'input was mapped' : 'input was not mapped').PHP_EOL;
+        $text = $taskInput->get('question') ?? 'Are you sure?';
         $default = $taskInput->get('default') ? '[Y\n]' : '[y\N]';
         $question = new ConfirmationQuestion($text.' '.$default.': ', false);
         return [ 'answer' => $helper->ask($input, $output, $question) ];

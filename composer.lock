@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MrHash/TaskMachine.git",
-                "reference": "ccfe2a0ba009e13f260f0f5fcfad8b1768a8e8da"
+                "reference": "a4fa8da83cb17b76fcb373dc03f2af63d2ca4f41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/ccfe2a0ba009e13f260f0f5fcfad8b1768a8e8da",
-                "reference": "ccfe2a0ba009e13f260f0f5fcfad8b1768a8e8da",
+                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/a4fa8da83cb17b76fcb373dc03f2af63d2ca4f41",
+                "reference": "a4fa8da83cb17b76fcb373dc03f2af63d2ca4f41",
                 "shasum": ""
             },
             "require": {
@@ -40,18 +40,19 @@
             "license": [
                 "MPL-2.0"
             ],
-            "description": "Modular micro-service task pipelining with valid state machine integrity.",
+            "description": "Modular micro-service task pipelining & orchestration with validated state machine integrity.",
             "keywords": [
                 "auryn",
                 "fsm",
                 "micro service",
                 "modular",
+                "orchestration",
                 "php",
                 "pipeline",
                 "state machine",
                 "task"
             ],
-            "time": "2017-03-12 12:31:55"
+            "time": "2017-03-14 00:38:25"
         },
         {
             "name": "php-ds/php-ds",
@@ -505,12 +506,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "3e22d4ac7a60f7421f1c9e8dd15140f072834480"
+                "reference": "6d26649995bfb96e71632455794ae34c3e8e6968"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/3e22d4ac7a60f7421f1c9e8dd15140f072834480",
-                "reference": "3e22d4ac7a60f7421f1c9e8dd15140f072834480",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/6d26649995bfb96e71632455794ae34c3e8e6968",
+                "reference": "6d26649995bfb96e71632455794ae34c3e8e6968",
                 "shasum": ""
             },
             "require": {
@@ -569,7 +570,7 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2017-03-07 16:28:52"
+            "time": "2017-03-12 15:46:41"
         },
         {
             "name": "symfony/console",

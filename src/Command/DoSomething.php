@@ -25,11 +25,15 @@ class DoSomething extends Command
 
         $this->taskMachine->machine('something')
             ->first('intro')->then('action')
-            ->task('action')->then('confirm')
+            ->task('action')
+                ->map(['result' => 'condition'])
+                ->then('confirm')
             ->task('confirm')
                 ->with(['question' => 'Make it so?'])
-                ->when('output.get("answer")', 'finish')
-                ->when('!output.get("answer")', 'fail')
+                ->when([
+                    'output.get("answer")' => 'finish', //@todo add __get to paramholdertrait
+                    '!output.get("answer")' => 'fail'
+                ])
             ->finally('finish')
             ->finally('fail');
 
