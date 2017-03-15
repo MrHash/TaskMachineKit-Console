@@ -2,6 +2,7 @@
 
 namespace ConsoleMachine\Command;
 
+use ConsoleMachine\ConsoleMachineBuilder;
 use ConsoleMachine\Handler\TestHandler;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -10,8 +11,6 @@ use Workflux\Param\InputInterface as TaskInputInterface;
 
 class DoSomething extends Command
 {
-    use TaskMachineTrait;
-
     protected function configure()
     {
         $this->setName('console:do');
@@ -29,14 +28,15 @@ class DoSomething extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->taskMachine->task('intro', function(OutputInterface $output) {
+        $machineBuilder = new ConsoleMachineBuilder;
+        $machineBuilder->task('intro', function(OutputInterface $output) {
             $output->writeln('hello');
         });
-        $this->taskMachine->task('doAction', new TestHandler);
-        $this->taskMachine->task('finish', [$this, 'finish']);
-        $this->taskMachine->task('fail', [$this, 'fail']);
+        $machineBuilder->task('doAction', new TestHandler);
+        $machineBuilder->task('finish', [$this, 'finish']);
+        $machineBuilder->task('fail', [$this, 'fail']);
 
-        $this->taskMachine->machine('something')
+        $taskMachine = $machineBuilder->machine('something')
             ->first('intro')->then('askChoice')
             ->task('askChoice')
                 ->with([
@@ -56,6 +56,6 @@ class DoSomething extends Command
             ->finally('fail')
             ->build();
 
-        $this->taskMachine->run('something');
+        $taskMachine->run('something');
     }
 }

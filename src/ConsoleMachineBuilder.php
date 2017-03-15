@@ -1,27 +1,22 @@
 <?php
 
-namespace ConsoleMachine\Command;
+namespace ConsoleMachine;
 
-use TaskMachine\TaskMachine;
+use TaskMachine\Builder\TaskMachineBuilder;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
-use Symfony\Component\Finder\Finder;
 use Workflux\Param\InputInterface as TaskInputInterface;
 
-trait TaskMachineTrait
+class ConsoleMachineBuilder extends TaskMachineBuilder
 {
-    protected $taskMachine;
-
-    public function __construct(TaskMachine $taskMachine)
+    public function __construct(FactoryInterface $factory = null)
     {
-        parent::__construct();
+        parent::__construct($factory);
 
-        $this->taskMachine = $taskMachine;
-        $this->taskMachine->task('askConfirmation', [$this, 'askConfirmation']);
-        $this->taskMachine->task('askChoice', [$this, 'askChoice']);
-        $this->taskMachine->task('findFiles', [$this, 'findFiles']);
+        $this->task('askConfirmation', [$this, 'askConfirmation']);
+        $this->task('askChoice', [$this, 'askChoice']);
     }
 
     public function askConfirmation(InputInterface $input, OutputInterface $output, TaskInputInterface $taskInput)
@@ -50,15 +45,4 @@ trait TaskMachineTrait
         return ['reponse' => $helper->ask($input, $output, $question)];
     }
 
-    public function findFiles(TaskInputInterface $taskInput)
-    {
-        return (new Finder)
-            ->files()
-            ->name($taskInput->get('name') ?? '*')
-            ->ignoreUnreadableDirs($taskInput->get('ignore_unreadable_dirs') ?? true)
-            ->ignoreVCS($taskInput->get('ignore_vcs') ?? true)
-            ->ignoreDotFiles($taskInput->get('ignore_dot_files') ?? true)
-            ->in($taskInput->get('in') ?? [])
-            ->depth($taskInput->get('depth') ?? '>= 0');
-    }
 }
