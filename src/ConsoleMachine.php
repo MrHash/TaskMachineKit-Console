@@ -35,8 +35,8 @@ class ConsoleMachine extends Application
 
     public function doRun(InputInterface $input, OutputInterface $output)
     {
-        $this->injector->share($input)->alias(InputInterface::class, ArgvInput::class);
-        $this->injector->share($output)->alias(OutputInterface::class, ConsoleOutput::class);
+        $this->injector->share($input)->alias(InputInterface::class, get_class($input));
+        $this->injector->share($output)->alias(OutputInterface::class, get_class($output));
 
         return parent::doRun($input, $output);
     }

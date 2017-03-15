@@ -1,6 +1,6 @@
 <?php
 
-namespace ConsoleMachine\Command;
+namespace ConsoleMachine\Handler;
 
 use TaskMachine\Handler\TaskHandlerInterface;
 use Workflux\Param\InputInterface;

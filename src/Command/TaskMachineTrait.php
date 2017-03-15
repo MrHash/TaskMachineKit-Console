@@ -5,9 +5,9 @@ namespace ConsoleMachine\Command;
 use TaskMachine\TaskMachine;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\ChoiceQuestion;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Workflux\Param\InputInterface as TaskInputInterface;
-use Workflux\Param\Settings;
 
 trait TaskMachineTrait
 {
@@ -15,31 +15,42 @@ trait TaskMachineTrait
 
     public function __construct(TaskMachine $taskMachine)
     {
-        $this->taskMachine = $taskMachine;
-
         parent::__construct();
 
-        $this->taskMachine->task('confirm', [$this, 'confirm']);
-        $this->taskMachine->task('finish', [$this, 'finish']);
-        $this->taskMachine->task('fail', [$this, 'fail']);
+        $this->taskMachine = $taskMachine;
+        $this->taskMachine->task('askConfirmation', [$this, 'askConfirmation']);
+        $this->taskMachine->task('askChoice', [$this, 'askChoice']);
+        $this->taskMachine->task('findFiles', [$this, 'findFiles']);
     }
 
-    public function confirm(InputInterface $input, OutputInterface $output, TaskInputInterface $taskInput) {
+    public function askConfirmation(InputInterface $input, OutputInterface $output, TaskInputInterface $taskInput)
+    {
         $helper = $this->getHelper('question');
-        echo ($taskInput->get('condition') ? 'input was mapped' : 'input was not mapped').PHP_EOL;
-        $text = $taskInput->get('question') ?? 'Are you sure?';
+        $message = $taskInput->get('question') ?? 'Are you sure?';
         $default = $taskInput->get('default') ? '[Y\n]' : '[y\N]';
-        $question = new ConfirmationQuestion($text.' '.$default.': ', false);
-        return [ 'answer' => $helper->ask($input, $output, $question) ];
+        $question = new ConfirmationQuestion('<question>'.$message.'</> <comment>'.$default.'</>: ', false);
+        return ['response' => $helper->ask($input, $output, $question)];
     }
 
-    public function finish(TaskInputInterface $input)
+    public function askChoice(InputInterface $input, OutputInterface $output, TaskInputInterface $taskInput)
     {
-        echo 'finished'.PHP_EOL;
+        $availableChoices = $taskInput->get('choices');
+
+        if (empty($availableChoices)) {
+            throw new \InvalidArgumentException('Choices must not be empty');
+        }
+
+        $helper = $this->getHelper('question');
+        $message = $taskInput->get('question') ?? 'Choose from the following options:';
+
+        $question = new ChoiceQuestion('<question>'.$message.'</>', $availableChoices);
+        $question->setMultiselect($taskInput->get('multiselect'));
+
+        return ['reponse' => $helper->ask($input, $output, $question)];
     }
 
-    public function fail(TaskInputInterface $input)
+    public function findFiles(TaskInputInterface $taskInput)
     {
-        echo 'failed'.PHP_EOL;
+
     }
 }
