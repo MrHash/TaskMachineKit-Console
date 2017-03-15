@@ -7,6 +7,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
+use Symfony\Component\Finder\Finder;
 use Workflux\Param\InputInterface as TaskInputInterface;
 
 trait TaskMachineTrait
@@ -51,6 +52,13 @@ trait TaskMachineTrait
 
     public function findFiles(TaskInputInterface $taskInput)
     {
-
+        return (new Finder)
+            ->files()
+            ->name($taskInput->get('name') ?? '*')
+            ->ignoreUnreadableDirs($taskInput->get('ignore_unreadable_dirs') ?? true)
+            ->ignoreVCS($taskInput->get('ignore_vcs') ?? true)
+            ->ignoreDotFiles($taskInput->get('ignore_dot_files') ?? true)
+            ->in($taskInput->get('in') ?? [])
+            ->depth($taskInput->get('depth') ?? '>= 0');
     }
 }

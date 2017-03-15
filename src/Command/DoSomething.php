@@ -53,7 +53,8 @@ class DoSomething extends Command
                     '!output.response' => 'fail'
                 ])
             ->finally('finish')
-            ->finally('fail');
+            ->finally('fail')
+            ->build();
 
         $this->taskMachine->run('something');
     }

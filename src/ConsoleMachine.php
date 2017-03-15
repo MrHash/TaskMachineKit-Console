@@ -9,6 +9,7 @@ use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
+use TaskMachine\Builder\TaskFactory;
 use TaskMachine\TaskMachine;
 
 class ConsoleMachine extends Application
@@ -19,9 +20,8 @@ class ConsoleMachine extends Application
     {
         parent::__construct('Console Machine', 'v0.1');
 
-        // Bootstrap a fresh Injector & TaskMachine if required
         $this->injector = $injector ?? new Injector;
-        $taskMachine = $taskMachine ?? new TaskMachine($this->injector);
+        $taskMachine = $taskMachine ?? new TaskMachine(new TaskFactory($this->injector));
 
         $this->injector->share($taskMachine);
 

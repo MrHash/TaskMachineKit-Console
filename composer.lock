@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MrHash/TaskMachine.git",
-                "reference": "b1c16519d338efb49d5fdebc261752447bfec652"
+                "reference": "71cf3e1a36946dfad74ba1ad091fd42e1dce7e38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/b1c16519d338efb49d5fdebc261752447bfec652",
-                "reference": "b1c16519d338efb49d5fdebc261752447bfec652",
+                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/71cf3e1a36946dfad74ba1ad091fd42e1dce7e38",
+                "reference": "71cf3e1a36946dfad74ba1ad091fd42e1dce7e38",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "state machine",
                 "task"
             ],
-            "time": "2017-03-14 20:52:37"
+            "time": "2017-03-15 19:00:12"
         },
         {
             "name": "php-ds/php-ds",
@@ -453,12 +453,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/shrink0r/workflux.git",
-                "reference": "56dbcfd59bf68dd2a5e5c601103911571ed22209"
+                "reference": "67506c79f1ae506a525aca2330f092f46dbbde9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shrink0r/workflux/zipball/56dbcfd59bf68dd2a5e5c601103911571ed22209",
-                "reference": "56dbcfd59bf68dd2a5e5c601103911571ed22209",
+                "url": "https://api.github.com/repos/shrink0r/workflux/zipball/67506c79f1ae506a525aca2330f092f46dbbde9b",
+                "reference": "67506c79f1ae506a525aca2330f092f46dbbde9b",
                 "shasum": ""
             },
             "require": {
@@ -498,7 +498,7 @@
                 "workflow",
                 "workflux"
             ],
-            "time": "2017-03-14 20:35:02"
+            "time": "2017-03-15 18:57:06"
         },
         {
             "name": "symfony/cache",
