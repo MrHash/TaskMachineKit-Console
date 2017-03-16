@@ -12,12 +12,14 @@ class ConsoleMachine extends Application
 {
     private $injector;
 
-    public function __construct(array $commands = [], Injector $injector = null)
+    public function __construct($name = 'Console Machine', $version = '0.1-dev', Injector $injector = null)
     {
-        parent::__construct('Console Machine', 'v0.1');
-
+        parent::__construct($name, $version);
         $this->injector = $injector ?? new Injector;
+    }
 
+    public function addCommands(array $commands)
+    {
         foreach ($commands as $command) {
             if (!$command instanceof Command) {
                 $command = $this->injector->make($command);
@@ -26,8 +28,14 @@ class ConsoleMachine extends Application
         }
     }
 
+    public function getInjector()
+    {
+        return $this->injector;
+    }
+
     public function doRun(InputInterface $input, OutputInterface $output)
     {
+        $this->injector->share($this->getHelperSet());
         $this->injector->share($input)->alias(InputInterface::class, get_class($input));
         $this->injector->share($output)->alias(OutputInterface::class, get_class($output));
 

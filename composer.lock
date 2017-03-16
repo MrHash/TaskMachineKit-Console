@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MrHash/TaskMachine.git",
-                "reference": "26e527db2f438f6c298094892cedec38cfffc1bb"
+                "reference": "7017ca1d9d4ab5edcf40f3fc257f949302a3a9ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/26e527db2f438f6c298094892cedec38cfffc1bb",
-                "reference": "26e527db2f438f6c298094892cedec38cfffc1bb",
+                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/7017ca1d9d4ab5edcf40f3fc257f949302a3a9ab",
+                "reference": "7017ca1d9d4ab5edcf40f3fc257f949302a3a9ab",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "state machine",
                 "task"
             ],
-            "time": "2017-03-15 22:25:05"
+            "time": "2017-03-16 00:11:19"
         },
         {
             "name": "php-ds/php-ds",
