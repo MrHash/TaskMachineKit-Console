@@ -2,12 +2,10 @@
 
 namespace ConsoleMachine\Command;
 
-use ConsoleMachine\Builder\ConsoleMachineBuilder;
 use ConsoleMachine\Handler\TestHandler;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use TaskMachine\Builder\TaskFactory;
 use Workflux\Param\InputInterface as TaskInputInterface;
 
 class DoSomething extends Command
@@ -29,7 +27,7 @@ class DoSomething extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $machineBuilder = new ConsoleMachineBuilder(new TaskFactory($this->getApplication()->getInjector()));
+        $machineBuilder = $this->getApplication()->getMachineBuilder();
 
         // define my custom tasks
         $machineBuilder->task('intro', function(OutputInterface $output) {
@@ -47,14 +45,15 @@ class DoSomething extends Command
         $taskMachine = $machineBuilder->machine('something')
             ->first('intro')->then('askChoice')
             ->task('askChoice')
-                ->with(['choices' => ['a', 'b', 'c']])
+                ->with(['choices' => ['src/Builder', 'src/Command', 'src/Handler']])
+                ->map(['response' => 'in'])
                 ->then('findFiles')
             ->task('findFiles')
-                ->with(['name' => '*.php', 'in' => 'src/Handler'])
+                ->with(['name' => '*.php'])
                 ->then('listFiles')
             ->task('listFiles')->then('askConfirmation')
             ->task('askConfirmation')
-                ->with(['question' => 'Make it so?'])
+                ->with(['question' => 'Is that correct?'])
                 ->when([
                     'output.response' => 'finish',
                     '!output.response' => 'fail'

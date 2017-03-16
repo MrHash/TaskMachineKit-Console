@@ -21,6 +21,6 @@ class AskChoice extends ConsoleTaskHandler
         $question = new ChoiceQuestion('<question>'.$message.'</>', $availableChoices);
         $question->setMultiselect($input->get('multiselect'));
 
-        return ['reponse' => $helper->ask($this->input, $this->output, $question)];
+        return ['response' => $helper->ask($this->input, $this->output, $question)];
     }
 }

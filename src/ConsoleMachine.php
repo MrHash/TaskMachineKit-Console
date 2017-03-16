@@ -3,10 +3,12 @@
 namespace ConsoleMachine;
 
 use Auryn\Injector;
+use ConsoleMachine\Builder\ConsoleMachineBuilder;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use TaskMachine\Builder\TaskFactory;
 
 class ConsoleMachine extends Application
 {
@@ -28,9 +30,9 @@ class ConsoleMachine extends Application
         }
     }
 
-    public function getInjector()
+    public function getMachineBuilder()
     {
-        return $this->injector;
+        return new ConsoleMachineBuilder(new TaskFactory($this->injector));
     }
 
     public function doRun(InputInterface $input, OutputInterface $output)
