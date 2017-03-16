@@ -1,5 +1,6 @@
 {
     "name": "mrhash/consolemachine",
+    "description": "Symfony console application bootstrap with command pipelining and orchestration.",
     "type": "library",
     "require": {
         "mrhash/taskmachine": "dev-master",
