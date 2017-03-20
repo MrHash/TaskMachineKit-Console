@@ -2,7 +2,6 @@
 
 namespace ConsoleMachine\Command;
 
-use ConsoleMachine\Handler\TestHandler;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -42,24 +41,31 @@ class DoSomething extends Command
         $machineBuilder->task('fail', [$this, 'fail']);
 
         // define my machine with custom and preconfigured tasks
-        $taskMachine = $machineBuilder->machine('something')
-            ->first('intro')->then('askChoice')
-            ->task('askChoice')
-                ->with(['choices' => ['src/Builder', 'src/Command', 'src/Handler']])
-                ->map(['response' => 'in'])
-                ->then('findFiles')
-            ->task('findFiles')
-                ->with(['name' => '*.php'])
-                ->then('listFiles')
-            ->task('listFiles')->then('askConfirmation')
-            ->task('askConfirmation')
-                ->with(['question' => 'Is that correct?'])
-                ->when([
+        $taskMachine = $machineBuilder
+            ->machine('something')
+            ->intro([
+                'initial' => true,
+                'transition' => 'askChoice'
+            ])
+            ->askChoice([
+                'input' => ['choices' => ['src/Builder', 'src/Command', 'src/Handler']],
+                'map' => ['output.response' => 'in'],
+                'transition' => 'findFiles'
+            ])
+            ->findFiles([
+                'input' => ['name' => '*.php'],
+                'transition' => 'listFiles'
+            ])
+            ->listFiles(['transition' => 'askConfirmation'])
+            ->askConfirmation([
+                'input' => ['question' => 'Is that correct?'],
+                'transition' => [
                     'output.response' => 'finish',
                     '!output.response' => 'fail'
-                ])
-            ->finally('finish')
-            ->finally('fail')
+                ]
+            ])
+            ->finish(['final' => true])
+            ->fail(['final' => true])
             ->build();
 
         $output = $taskMachine->run('something');

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MrHash/TaskMachine.git",
-                "reference": "7017ca1d9d4ab5edcf40f3fc257f949302a3a9ab"
+                "reference": "c7116d2d35f45b3892ae5ab3491433170c353d11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/7017ca1d9d4ab5edcf40f3fc257f949302a3a9ab",
-                "reference": "7017ca1d9d4ab5edcf40f3fc257f949302a3a9ab",
+                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/c7116d2d35f45b3892ae5ab3491433170c353d11",
+                "reference": "c7116d2d35f45b3892ae5ab3491433170c353d11",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "state machine",
                 "task"
             ],
-            "time": "2017-03-16 00:11:19"
+            "time": "2017-03-17 15:25:29"
         },
         {
             "name": "php-ds/php-ds",
@@ -453,12 +453,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/shrink0r/workflux.git",
-                "reference": "517bc3689a014f1d8b0fb97d15a6a0e3d94ed687"
+                "reference": "008f45c64f52b1f795ab7f6ddbfc1a55580254d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shrink0r/workflux/zipball/517bc3689a014f1d8b0fb97d15a6a0e3d94ed687",
-                "reference": "517bc3689a014f1d8b0fb97d15a6a0e3d94ed687",
+                "url": "https://api.github.com/repos/shrink0r/workflux/zipball/008f45c64f52b1f795ab7f6ddbfc1a55580254d9",
+                "reference": "008f45c64f52b1f795ab7f6ddbfc1a55580254d9",
                 "shasum": ""
             },
             "require": {
@@ -498,7 +498,7 @@
                 "workflow",
                 "workflux"
             ],
-            "time": "2017-03-15 20:42:50"
+            "time": "2017-03-17 11:42:23"
         },
         {
             "name": "symfony/cache",
@@ -506,12 +506,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "6d26649995bfb96e71632455794ae34c3e8e6968"
+                "reference": "7a420a39f234c7b42dff9b0c528bb1d5f0ccf6b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/6d26649995bfb96e71632455794ae34c3e8e6968",
-                "reference": "6d26649995bfb96e71632455794ae34c3e8e6968",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/7a420a39f234c7b42dff9b0c528bb1d5f0ccf6b7",
+                "reference": "7a420a39f234c7b42dff9b0c528bb1d5f0ccf6b7",
                 "shasum": ""
             },
             "require": {
@@ -528,7 +528,7 @@
                 "psr/simple-cache-implementation": "1.0"
             },
             "require-dev": {
-                "cache/integration-tests": "^0.15.0",
+                "cache/integration-tests": "dev-master",
                 "doctrine/cache": "~1.6",
                 "doctrine/dbal": "~2.4",
                 "predis/predis": "~1.0"
@@ -570,7 +570,7 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2017-03-12 15:46:41"
+            "time": "2017-03-17 14:59:00"
         },
         {
             "name": "symfony/console",
@@ -578,12 +578,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "d4a7323e9ad72858fd0288297e9866fd889bbdd6"
+                "reference": "d4d7544f5a267aca6b79f0068ccc2bd07abc65a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/d4a7323e9ad72858fd0288297e9866fd889bbdd6",
-                "reference": "d4a7323e9ad72858fd0288297e9866fd889bbdd6",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d4d7544f5a267aca6b79f0068ccc2bd07abc65a2",
+                "reference": "d4d7544f5a267aca6b79f0068ccc2bd07abc65a2",
                 "shasum": ""
             },
             "require": {
@@ -638,7 +638,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-07 16:28:52"
+            "time": "2017-03-20 10:06:58"
         },
         {
             "name": "symfony/debug",
@@ -752,12 +752,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "1558dea3daea8ddca57ef2c95745f863ce4b2a1e"
+                "reference": "851a8764b99bd4173b9992d09ab91050803f0385"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/1558dea3daea8ddca57ef2c95745f863ce4b2a1e",
-                "reference": "1558dea3daea8ddca57ef2c95745f863ce4b2a1e",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/851a8764b99bd4173b9992d09ab91050803f0385",
+                "reference": "851a8764b99bd4173b9992d09ab91050803f0385",
                 "shasum": ""
             },
             "require": {
@@ -793,7 +793,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-21 10:07:34"
+            "time": "2017-03-20 10:06:58"
         },
         {
             "name": "symfony/polyfill-mbstring",
