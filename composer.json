@@ -1,13 +1,13 @@
 {
-    "name": "mrhash/consolemachine",
-    "description": "Symfony console application bootstrap with command pipelining and orchestration.",
+    "name": "mrhash/taskmachine-console",
+    "description": "TaskMachine orchestration support kit for Symfony Console applications.",
     "type": "library",
     "require": {
         "mrhash/taskmachine": "dev-master",
         "shrink0r/php-schema": "dev-master as 0.3",
-        "symfony/console": "^3.2",
-        "symfony/process": "^3.2",
-        "symfony/finder": "^3.2"
+        "symfony/console": "~2|~3",
+        "symfony/process": "~2|~3",
+        "symfony/finder": "~2|~3"
     },
     "license": "MPL-2.0",
     "minimum-stability": "dev",
