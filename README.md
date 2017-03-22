@@ -1,14 +1,14 @@
-# ConsoleMachine
-### TaskMachine orchestration kit for Symfony Console.
+# TaskMachineKit - Console
+### TaskMachine orchestration support kit for Symfony Console applications.
 
 ## Integration
-You can integrate TaskMachine into you app easily as follows:
+You can integrate TaskMachine into you Symfony Console application easily as follows:
 
 ### Register TaskMachine console helper
 ```php
-$app = new Application;
+$app = new \Symfony\Component\Console\Application;
 $helperSet = $app->getHelperSet();
-$helperSet->set(new TaskMachineHelper);
+$helperSet->set(new \TaskMachineKit\Console\Helper\TaskMachineHelper);
 $app->setHelperSet($helperSet);
 $app->addCommands([
     // my command list ...
@@ -17,8 +17,10 @@ $app->run();
 ```
 ### Use TaskMachine in your commands
 ```php
-protected function execute(InputInterface $input, OutputInterface $output)
-{
+protected function execute(
+    \Symfony\Component\Console\Input\InputInterface $input, 
+    \Symfony\Component\Console\Output\OutputInterface $output
+) {
     //Helper is already InputAware
     $tmb = $this->getHelper('taskmachine')->getBuilder($output);
     
@@ -39,7 +41,7 @@ protected function execute(InputInterface $input, OutputInterface $output)
 
 ### Interopability with your own Auryn dependency injector
 ```php
-$helperSet->set(new TaskMachineHelper($myInjector));
+$helperSet->set(new \TaskMachineKit\Console\Helper\TaskMachineHelper($myInjector));
 ```
 
 ## Commands
