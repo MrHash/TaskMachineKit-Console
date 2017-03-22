@@ -2,10 +2,10 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-use ConsoleMachine\Command\DoSomething;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Helper\HelperSet;
-use ConsoleMachine\Helper\TaskMachineHelper;
+use TaskMachineKit\Console\Command\DoSomething;
+use TaskMachineKit\Console\Helper\TaskMachineHelper;
 
 $app = new Application;
 $helperSet = $app->getHelperSet();

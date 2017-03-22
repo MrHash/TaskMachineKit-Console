@@ -1,6 +1,6 @@
 <?php
 
-namespace ConsoleMachine\Helper;
+namespace TaskMachineKit\Console\Helper;
 
 use Auryn\Injector;
 use Symfony\Component\Console\Helper\InputAwareHelper;
@@ -29,7 +29,7 @@ class TaskMachineHelper extends InputAwareHelper
         $this->injector->share($this->input)->alias(InputInterface::class, get_class($this->input));
         $this->injector->share($output)->alias(OutputInterface::class, get_class($output));
 
-        $yamlFilePaths = [dirname(__DIR__).DIRECTORY_SEPARATOR.'consolemachine.yml'];
+        $yamlFilePaths = [dirname(__DIR__).DIRECTORY_SEPARATOR.'taskmachinekit_console.yml'];
         return new YamlTaskMachineBuilder($yamlFilePaths, new TaskFactory($this->injector));
     }
 }

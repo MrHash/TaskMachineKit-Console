@@ -1,0 +1,8 @@
+version: "0.1"
+tasks:
+  askConfirmation:
+    handler: \TaskMachineKit\Console\Handler\AskConfirmation
+  askChoice:
+    handler: \TaskMachineKit\Console\Handler\AskChoice
+  findFiles:
+    handler: \TaskMachineKit\Console\Handler\FindFiles

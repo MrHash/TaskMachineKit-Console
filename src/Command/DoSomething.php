@@ -1,6 +1,6 @@
 <?php
 
-namespace ConsoleMachine\Command;
+namespace TaskMachineKit\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -48,7 +48,7 @@ class DoSomething extends Command
                 'transition' => 'askChoice'
             ])
             ->askChoice([
-                'input' => ['choices' => ['src/Builder', 'src/Command', 'src/Handler']],
+                'input' => ['choices' => ['src/Helper', 'src/Command', 'src/Handler']],
                 'map' => ['output.response' => 'in'],
                 'transition' => 'findFiles'
             ])
@@ -56,7 +56,13 @@ class DoSomething extends Command
                 'input' => ['name' => '*.php'],
                 'transition' => 'listFiles'
             ])
-            ->listFiles(['transition' => 'askConfirmation'])
+            ->listFiles(['transition' => 'chooseFolderAgain'])
+            ->chooseFolderAgain([
+                'alias' => 'askChoice',
+                'input' => ['choices' => ['src/Helper']],
+                'map' => ['output.response' => 'in'],
+                'transition' => 'askConfirmation'
+            ])
             ->askConfirmation([
                 'input' => ['question' => 'Is that correct?'],
                 'transition' => [

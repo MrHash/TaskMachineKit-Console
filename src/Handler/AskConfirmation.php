@@ -1,6 +1,6 @@
 <?php
 
-namespace ConsoleMachine\Handler;
+namespace TaskMachineKit\Console\Handler;
 
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Workflux\Param\InputInterface;

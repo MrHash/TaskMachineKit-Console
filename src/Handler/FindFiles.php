@@ -1,6 +1,6 @@
 <?php
 
-namespace ConsoleMachine\Handler;
+namespace TaskMachineKit\Console\Handler;
 
 use Symfony\Component\Finder\Finder;
 use Workflux\Param\InputInterface;

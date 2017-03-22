@@ -1,6 +1,6 @@
 <?php
 
-namespace ConsoleMachine\Handler;
+namespace TaskMachineKit\Console\Handler;
 
 use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Input\InputInterface;

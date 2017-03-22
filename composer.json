@@ -1,5 +1,5 @@
 {
-    "name": "mrhash/taskmachine-console",
+    "name": "mrhash/taskmachinekit-console",
     "description": "TaskMachine orchestration support kit for Symfony Console applications.",
     "type": "library",
     "require": {
@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "ConsoleMachine\\": "src/"
+            "TaskMachineKit\\Console\\": "src/"
         }
     }
 }

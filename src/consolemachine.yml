@@ -1,8 +1,0 @@
-version: "0.1"
-tasks:
-  askConfirmation:
-    handler: \ConsoleMachine\Handler\AskConfirmation
-  askChoice:
-    handler: \ConsoleMachine\Handler\AskChoice
-  findFiles:
-    handler: \ConsoleMachine\Handler\FindFiles
