@@ -1,6 +1,8 @@
 # TaskMachineKit - Console
 ### TaskMachine orchestration support kit for Symfony Console applications.
 
+See https://github.com/MrHash/TaskMachine for details about TaskMachine and how it works.
+
 ## Integration
 You can integrate TaskMachine into you Symfony Console application easily as follows:
 
