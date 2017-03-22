@@ -12,19 +12,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MrHash/TaskMachine.git",
-                "reference": "c7116d2d35f45b3892ae5ab3491433170c353d11"
+                "reference": "d316c4542bee86f72a6906b0b21368414431249c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/c7116d2d35f45b3892ae5ab3491433170c353d11",
-                "reference": "c7116d2d35f45b3892ae5ab3491433170c353d11",
+                "url": "https://api.github.com/repos/MrHash/TaskMachine/zipball/d316c4542bee86f72a6906b0b21368414431249c",
+                "reference": "d316c4542bee86f72a6906b0b21368414431249c",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
                 "rdlowrey/auryn": "^1.4",
                 "shrink0r/php-schema": "dev-master as 0.3",
-                "shrink0r/workflux": "dev-master"
+                "shrink0r/workflux": "dev-master",
+                "symfony/yaml": "^3.2"
             },
             "require-dev": {
                 "phpunit/phpunit": "^5.3",
@@ -52,7 +53,7 @@
                 "state machine",
                 "task"
             ],
-            "time": "2017-03-17 15:25:29"
+            "time": "2017-03-22 11:20:20"
         },
         {
             "name": "php-ds/php-ds",
@@ -578,12 +579,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "d4d7544f5a267aca6b79f0068ccc2bd07abc65a2"
+                "reference": "6dc940e27a7c8ac0ef32bb26981ab1d1a24ee8f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/d4d7544f5a267aca6b79f0068ccc2bd07abc65a2",
-                "reference": "d4d7544f5a267aca6b79f0068ccc2bd07abc65a2",
+                "url": "https://api.github.com/repos/symfony/console/zipball/6dc940e27a7c8ac0ef32bb26981ab1d1a24ee8f0",
+                "reference": "6dc940e27a7c8ac0ef32bb26981ab1d1a24ee8f0",
                 "shasum": ""
             },
             "require": {
@@ -638,7 +639,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-20 10:06:58"
+            "time": "2017-03-22 18:41:00"
         },
         {
             "name": "symfony/debug",
@@ -909,12 +910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
-                "reference": "820b71d9384a66f92ef968f82af871dc76debedb"
+                "reference": "6b87ffe782b889d68b3e18006e421e3d6961320d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/820b71d9384a66f92ef968f82af871dc76debedb",
-                "reference": "820b71d9384a66f92ef968f82af871dc76debedb",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/6b87ffe782b889d68b3e18006e421e3d6961320d",
+                "reference": "6b87ffe782b889d68b3e18006e421e3d6961320d",
                 "shasum": ""
             },
             "require": {
@@ -961,7 +962,62 @@
                 "property path",
                 "reflection"
             ],
-            "time": "2017-02-18 17:06:33"
+            "time": "2017-03-21 21:39:01"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "76ae7f27e17ab4e5e177d8f9aa6c116d56fe47df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/76ae7f27e17ab4e5e177d8f9aa6c116d56fe47df",
+                "reference": "76ae7f27e17ab4e5e177d8f9aa6c116d56fe47df",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "symfony/console": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-03-22 19:08:11"
         }
     ],
     "packages-dev": [],

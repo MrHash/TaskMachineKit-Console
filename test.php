@@ -3,12 +3,17 @@
 require __DIR__.'/vendor/autoload.php';
 
 use ConsoleMachine\Command\DoSomething;
-use ConsoleMachine\ConsoleMachine;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Helper\HelperSet;
+use ConsoleMachine\Helper\TaskMachineHelper;
 
-$app = new ConsoleMachine;
+$app = new Application;
+$helperSet = $app->getHelperSet();
+$helperSet->set(new TaskMachineHelper);
+$app->setHelperSet($helperSet);
 
 $app->addCommands([
-    DoSomething::class
+    new DoSomething
 ]);
 
 $app->run();

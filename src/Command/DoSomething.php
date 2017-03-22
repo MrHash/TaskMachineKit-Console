@@ -26,7 +26,7 @@ class DoSomething extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $machineBuilder = $this->getApplication()->getMachineBuilder();
+        $machineBuilder = $this->getHelper('taskmachine')->getBuilder($output);
 
         // define my custom tasks
         $machineBuilder->task('intro', function(OutputInterface $output) {
